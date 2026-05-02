@@ -151,3 +151,6 @@ if cloud_name and api_key and api_secret:
         'API_SECRET': api_secret,
     }
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+else:
+    # Use local file storage for development (when Cloudinary credentials are not provided)
+    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
